@@ -1,11 +1,10 @@
-/* Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. 
-Your result cannot contain duplicates. */
+-- Query the list of distinct CITY names ending with vowels (a, e, i, o, u) from STATION. 
 
-select distinct(city) 
-from station 
-where city 
-like '%a' or city 
-like '%e' or city 
-like '%o' or city 
-like '%i' or city 
-like '%u';
+SELECT DISTINCT city 
+FROM station 
+WHERE city 
+LIKE '%a' OR city 
+LIKE '%e' OR city 
+LIKE '%o' OR city 
+LIKE '%i' OR city 
+LIKE '%u';
