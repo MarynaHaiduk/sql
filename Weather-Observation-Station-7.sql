@@ -1,5 +1,3 @@
--- Query the list of distinct CITY names ending with vowels (a, e, i, o, u) from STATION. 
-
 SELECT DISTINCT city 
 FROM station 
 WHERE city 
