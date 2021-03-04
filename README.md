@@ -1,53 +1,85 @@
-# My solutions "MySQL HackerRank" problems.
+### My solutions to "MySQL HackerRank" problems:
 * https://www.hackerrank.com/maryna_h
 
 ---
 
-## Basic syntax
-
+### Basic syntax:
+- SELECT:
+  * select all data from table:
+    ```
+      SELECT * FROM tableName;
+    ```
+  * select specified columns from table:
+    ```
+      SELECT columnName1, columnName2 FROM tableName;
+    ```
+  * select columns from the table with new temporary column name:
+    ```
+      SELECT columnName1, columnName2 AS "new column name" FROM tableName;
+    ```  
+  * select columns from the table with new temporary table name:
+    ```
+      SELECT columnName1, columnName2 FROM tableName AS tableAlias;
+    ```
+  * select with sorting data in the columns by asc/desc:
+    ```
+      SELECT columnName1, columnName2 FROM tableName ORDER BY columnName1 [ASC|DESC];
+      SELECT columnName1, columnName2 FROM tableName WHERE columnName1 operator 'value' AND ORDER BY columnName2 [ASC|DESC];
+    ```  
+  * select specified number of rows:
+    ```
+      SELECT columnName1, columnName2 FROM tableName LIMIT 5;
+    ```  
+  * select only limit rows start from offset:
+    ```
+      SELECT columnName1, columnName2 FROM tableName LIMIT 5 OFFSET 5;
+    ```
+  * select unique rows without duplicates:
+    ```
+      SELECT DISTINCT columnName1, columnName2 FROM tableName;
+      SELECT COUNT(columnName1) - COUNT(DISTINCT columnName1) FROM tableName;
+    ```
+  * select with condition WHERE:
+    ```
+      SELECT columnName1, columnName2 FROM tableName WHERE columnName1 operator 'value';
+    ```  
+  * select with rounding and choosing average:
+    ```
+      SELECT ROUND(AVG(columnName1)) FROM tableName;
+    ```
+  * count rows with specified condition (output the number):
+    ```
+      SELECT COUNT(*) FROM tableName;
+      SELECT COUNT(columnName1) FROM tableName;
+    ```
+  * count sum of data in specified column:
+    ```
+      SELECT SUM(columnName1) FROM tableName;
+    ```
+  * count average in the column:
+    ```
+      SELECT AVG(columnName1) FROM tableName;
+    ```
+  * select max and min in the column and/or difference:
+    ```
+      SELECT MAX(columnName1) - MIN(columnName1) FROM tableName;
+    ```
+  * select with condition AND|OR:
+    ```
+      SELECT columnName1, columnName2 FROM tableName 
+      WHERE condition operator 'value' 
+      AND|OR condition operator 'value';
+    ```
+  * select with pattern:
+    ```
+    SELECT columnName1 FROM tableName WHERE columnName1 LIKE pattern;
+    ```
 ---
 
 ### Filter
-* select all columns from table
-```SELECT * FROM tableName;```
-
 * select from all databases
 ```SELECT 'column1';```
-
-* select specified columns from table
-```SELECT column1, column2 FROM tableName;```
-
-* select and change column name
-```SELECT column1, column2 AS "new column name" FROM tableName;```
-* or ```SELECT column1, column2 FROM tableName AS tableAlias;```
-
-* sorting
-```SELECT column1, column2 FROM tableName ORDER BY column1, column2 [ASC|DESC|column1];```
-
-* select unique
-```SELECT DISTINCT column1, column2 FROM tableName;```
-
-* select with condition
-```SELECT column1, column2 FROM tableName WHERE column1 operator 'value';```
-
-* select only limit rows
-```SELECT column1, column2 FROM tableName LIMIT 5;```
-
-* select only limit rows start from offset
-```SELECT column1, column2 FROM tableName LIMIT 5 OFFSET 5;```
-
-* count rows with specified condition (output the number)
-```
-SELECT COUNT(*) FROM tableName;
-SELECT COUNT(column1) FROM tableName;
-```
-
-* select with condition	
-```SELECT column1, column2 FROM tableName WHERE condition operator 'value' AND|OR condition operator 'value';```
-
-* select with pattern
-```SELECT column1 FROM tableName WHERE column1 LIKE pattern;```
-
+  
 ---
 
 ### Change data in table
@@ -67,8 +99,6 @@ SELECT COUNT(column1) FROM tableName;
 
 * delete all rows from the entire table!!!
 ```DELETE FROM tableName;```
-
-
 
 ---
 
@@ -196,4 +226,3 @@ UNION ALL	SELECT column1(s) FROM tableName1
 
 UNION ALL
 ```SELECT column1(s) FROM tableName2```
-
