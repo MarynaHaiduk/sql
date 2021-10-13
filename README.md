@@ -30,6 +30,9 @@ SELECT column1, column2 FROM tableName WHERE id=3;
 SELECT * FROM tableName WHERE column1="column value"; 
 SELECT column1 FROM tableName WHERE column1 IN (value1, value2,..);`// a couple
 SELECT * FROM tableName WHERE id > 100 OR column1="column value"; 
+SELECT LTRIM("    SQL data        ") AS column_name;  // Remove leading spaces from a string
+SELECT RTRIM("    SQL data        ") AS column_name; // Remove trailing spaces from a string
+
 
 // patterns
 SELECT column1 FROM tableName WHERE column1 LIKE pattern;
