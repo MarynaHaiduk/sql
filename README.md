@@ -123,3 +123,6 @@ BEGIN
 --do what needs to be done if not
 END
 ```
+
+// QUERIES
+select ID from COMPANY where EMPLOYEES >= 10000 ORDER BY ID asc;
